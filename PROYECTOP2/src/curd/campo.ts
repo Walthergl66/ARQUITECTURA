@@ -5,7 +5,7 @@ export const InsertCampo = async (nombre: string, cultivo: string, tipo: string)
     const campo = new ZonaCultivo();
     campo.nombre = nombre;
     campo.ubicacion = "Norte";
-    campo.tipoSuelo = tipo; // 'invernadero', 'campo abierto', etc.
+    campo.tipoSuelo = tipo; 
     campo.cultivoActual = cultivo;
 
 
@@ -28,7 +28,7 @@ export const UpdateCampo = async (id: number, nombre: string, cultivo: string, t
     }
     campo.nombre = nombre;
     campo.ubicacion = "Norte";
-    campo.tipoSuelo = tipo; // 'invernadero', 'campo abierto', etc.
+    campo.tipoSuelo = tipo; 
     campo.cultivoActual = cultivo;
     return await AppDataSource.manager.save(campo);
 }
