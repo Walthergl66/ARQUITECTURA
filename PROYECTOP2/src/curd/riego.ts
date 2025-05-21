@@ -3,7 +3,7 @@ import { Riego,} from "../models/riego";
 import { ZonaCultivo } from "../models/zonaCultivo";
 
 export const insertRiego = async (cantidadAgua: number, fechaRiego: Date, zonaCultivoName: string) => {
-    const zonaRepo = await AppDataSource.getRepository(ZonaCultivo);
+    const zonaRepo =  AppDataSource.getRepository(ZonaCultivo);
 
     const zona = await zonaRepo.findOne({where: { nombre: zonaCultivoName }});
     if (!zona) {
