@@ -4,7 +4,7 @@ import { InfoCampo, InsertCampo, InfoCampoById, UpdateCampo, DeleteCampo } from 
 import { insertRiego, getRiegos, getRiegoById, updateRiego, deleteRiego } from './curd/riego';
 import { insertSensor, getSensors, getSensorById, updateSensor, deleteSensor } from './curd/sensor';
 import { iniciar } from './database'
-// import { Cultivo } from './models/cultivos';
+
 
 async function mainCultivo() {
     await iniciar()
@@ -42,10 +42,10 @@ async function mainCampo() {
     console.log("Lista de campos", campos);
     const campoById = await InfoCampoById(campo.id);
     console.log("Campo ", campoById);
-    // const updatedCampo = await UpdateCampo(campo.id, 'Zona 1 actualizado', 'Maiz', 'invernadero');
-    // console.log("Campo actualizado", updatedCampo);
-    // const deletedCampo = await DeleteCampo(campo.id);
-    // console.log("Campo eliminado correctamente", deletedCampo);
+    const updatedCampo = await UpdateCampo(campo.id, 'Zona 1 actualizado', 'Maiz', 'invernadero');
+    console.log("Campo actualizado", updatedCampo);
+    const deletedCampo = await DeleteCampo(campo.id);
+    console.log("Campo eliminado correctamente", deletedCampo);
 }
 
 async function mainRiego() {
@@ -78,5 +78,5 @@ async function mainSensor() {
 //mainCultivo()
 // mainUsuario()
 // mainCampo()
-// mainRiego()
-mainSensor()
+mainRiego()
+// mainSensor()

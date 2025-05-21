@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn,OneToMany } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 import { ZonaCultivo } from "./zonaCultivo";
 
 @Entity()
@@ -25,7 +25,7 @@ export class Riego {
   @JoinColumn({ name: 'zonaCultivoId' })
   zonaCultivo!: ZonaCultivo;
 
-//   @Column()
-//   zonaCultivoId!: number;
+  // @Column()
+  // zonaCultivoId!: number;
 }
 
