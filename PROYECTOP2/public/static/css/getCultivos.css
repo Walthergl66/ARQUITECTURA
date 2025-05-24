@@ -1,0 +1,53 @@
+body {
+      /* Ruta relativa a la carpeta pública */
+      background-image: url('../img/cultivo.jpg');
+      background-size: cover; /* Para que cubra toda la pantalla */
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Altura completa */
+      margin: 0; /* Sin márgenes */
+      font-family: Arial, sans-serif;
+      color: white; /* Por si el texto necesita contraste */
+    }
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+table {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:hover {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+td {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}

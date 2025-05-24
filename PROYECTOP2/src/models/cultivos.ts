@@ -38,7 +38,7 @@ export class User {
   email!: string;
 
   @Column()
-  role!: string; // 'admin' o 'user'
+  rol!: string; // 'admin' o 'user'
 
 }
 

@@ -1,0 +1,70 @@
+/* Fuente natural y moderna */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+      /* Ruta relativa a la carpeta pública */
+      background-image: url('../img/cultivo.jpg');
+      background-size: cover; /* Para que cubra toda la pantalla */
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Altura completa */
+      margin: 0; /* Sin márgenes */
+      font-family: Arial, sans-serif;
+      color: white; /* Por si el texto necesita contraste */
+    }
+
+.welcome-box {
+    background: rgba(255, 255, 245, 0.8); /* crema claro */
+    backdrop-filter: blur(12px);
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    max-width: 540px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.welcome-box:hover {
+    transform: scale(1.015);
+}
+
+.leaf-icon {
+    font-size: 3.5rem;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1c3b2a;
+    margin-bottom: 15px;
+}
+
+.logo-text {
+    color: #4caf50;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #4a5a4a;
+    margin-bottom: 30px;
+}
+
+.btn-success {
+    background-color: #6d9f50; /* verde oliva */
+    border: none;
+    border-radius: 25px;
+    padding: 12px 40px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 12px rgba(109, 159, 80, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: #5e8d45;
+    transform: translateY(-2px);
+}
