@@ -113,6 +113,7 @@ app.use(express.static(path.join(__dirname, '../public')));
   try {
     await iniciar();
     console.log('✅ Conectado a la base de datos');
+    console.log(`🌎 Servidor corriendo en http://localhost:${PORT}`);
   } catch (error) {
     console.error('❌ Error al conectar a la base de datos', error);
   }
@@ -131,6 +132,4 @@ app.get('/', (req, res) => {
 });
 
 // Iniciar servidor
-app.listen(PORT, () => {
-  console.log(`🌎 Servidor corriendo en http://localhost:${PORT}`);
-});
+app.listen(PORT, () => { });

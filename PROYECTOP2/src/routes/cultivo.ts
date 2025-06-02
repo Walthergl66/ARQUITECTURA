@@ -4,9 +4,9 @@ import { insertCultivo, getCultivos, getCultivoById, updateCultivo, deleteCultiv
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    const { nombre, tipo, fecha_inicio, fecha_fin } = req.body;
+    const { nombre, tipo, fecha_inicio, fecha_fin, zona  } = req.body;
     try {
-        const cultivo = await insertCultivo(nombre, tipo, new Date(fecha_inicio), new Date(fecha_fin));
+        const cultivo = await insertCultivo(nombre, tipo, new Date(fecha_inicio), new Date(fecha_fin), zona);
         res.json(cultivo);
     } catch (error) {
         res.status(500).json({ error: 'Error al crear el cultivo' });
@@ -26,8 +26,8 @@ router.get('/:id', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const { nombre, tipo, fecha_inicio, fecha_fin } = req.body;
-    const cultivo = await updateCultivo(Number(id), nombre, tipo, new Date(fecha_inicio), new Date(fecha_fin));
+    const { nombre, tipo, fecha_inicio, fecha_fin, zona } = req.body;
+    const cultivo = await updateCultivo(Number(id), nombre, tipo, new Date(fecha_inicio), new Date(fecha_fin),zona);
     res.json(cultivo);
 });
 

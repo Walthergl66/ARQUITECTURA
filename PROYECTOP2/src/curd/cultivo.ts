@@ -1,13 +1,14 @@
 import { AppDataSource } from "../data-source";
 import { Cultivo } from "../models/cultivos";
+// import { ZonaCultivo } from "../models/zonaCultivo";
 
-export const insertCultivo = async (nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date) => {
+export const insertCultivo = async (nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date, zonaCultivo: string) => {
     const cultivo1 = new Cultivo();
     cultivo1.nombre = nombre;
     cultivo1.tipoCultivo = tipo;
     cultivo1.fechaSiembra = fechaSiembra;
     cultivo1.fechaCosecha = fechaCosecha;
-    cultivo1.zonaCultivo = "Zona 1"; 
+    cultivo1.zonaCultivo =  zonaCultivo; 
     AppDataSource.manager.insert
     return await AppDataSource.manager.save(cultivo1);
 }
@@ -20,7 +21,7 @@ export const getCultivoById = async (id: number) => {
     return await AppDataSource.manager.findOneBy(Cultivo, { id });
 }
 
-export const updateCultivo = async (id: number, nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date) => {
+export const updateCultivo = async (id: number, nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date, zonaCultivo:string) => {
     const cultivo = await getCultivoById(id);
     if (!cultivo) {
         throw new Error('Cultivo no encontrado');
