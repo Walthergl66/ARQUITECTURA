@@ -108,16 +108,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Servir archivos estáticos desde /public
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Conectar a la base de datos
-(async () => {
-  try {
-    await iniciar();
-    console.log('✅ Conectado a la base de datos');
-    console.log(`🌎 Servidor corriendo en http://localhost:${PORT}`);
-  } catch (error) {
-    console.error('❌ Error al conectar a la base de datos', error);
-  }
-})();
+ 
+ (async () => {
+   try {
+     await iniciar();
+     console.log(`🌎 Servidor corriendo en http://localhost:${PORT}`);
+   } catch (error) {
+     console.error('❌ Error al conectar a la base de datos', error);
+   }
+ })();
 
 // Rutas API
 app.use('/cultivos', cultivoRoutes);
@@ -126,10 +125,10 @@ app.use('/usuarios', usuarioRoutes);
 // app.use('/riegos', riegoRoutes);
 // app.use('/sensores', sensorRoutes);
 
-// Ruta raíz sirve el index.html
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-// Iniciar servidor
+
 app.listen(PORT, () => { });
