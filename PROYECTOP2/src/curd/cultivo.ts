@@ -1,42 +1,42 @@
-import { AppDataSource } from "../data-source";
-import { Cultivo } from "../models/cultivos";
-// import { ZonaCultivo } from "../models/zonaCultivo";
+// import { AppDataSource } from "../data-source";
+// import { Cultivo } from "../models/cultivos";
+// // import { ZonaCultivo } from "../models/zonaCultivo";
 
-export const insertCultivo = async (nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date, zonaCultivo: string) => {
-    const cultivo1 = new Cultivo();
-    cultivo1.nombre = nombre;
-    cultivo1.tipoCultivo = tipo;
-    cultivo1.fechaSiembra = fechaSiembra;
-    cultivo1.fechaCosecha = fechaCosecha;
-    cultivo1.zonaCultivo =  zonaCultivo; 
-    AppDataSource.manager.insert
-    return await AppDataSource.manager.save(cultivo1);
-}
+// export const insertCultivo = async (nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date, zonaCultivo: string) => {
+//     const cultivo1 = new Cultivo();
+//     cultivo1.nombre = nombre;
+//     cultivo1.tipoCultivo = tipo;
+//     cultivo1.fechaSiembra = fechaSiembra;
+//     cultivo1.fechaCosecha = fechaCosecha;
+//     cultivo1.zonaCultivo =  zonaCultivo; 
+//     AppDataSource.manager.insert
+//     return await AppDataSource.manager.save(cultivo1);
+// }
 
-export const getCultivos = async () => {
-    return await AppDataSource.manager.find(Cultivo);
-}
+// export const getCultivos = async () => {
+//     return await AppDataSource.manager.find(Cultivo);
+// }
 
-export const getCultivoById = async (id: number) => {
-    return await AppDataSource.manager.findOneBy(Cultivo, { id });
-}
+// export const getCultivoById = async (id: number) => {
+//     return await AppDataSource.manager.findOneBy(Cultivo, { id });
+// }
 
-export const updateCultivo = async (id: number, nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date, zonaCultivo:string) => {
-    const cultivo = await getCultivoById(id);
-    if (!cultivo) {
-        throw new Error('Cultivo no encontrado');
-    }
-    cultivo.nombre = nombre;
-    cultivo.tipoCultivo = tipo;
-    cultivo.fechaSiembra = fechaSiembra;
-    cultivo.fechaCosecha = fechaCosecha;
-    return await AppDataSource.manager.save(cultivo);
-}
+// export const updateCultivo = async (id: number, nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date, zonaCultivo:string) => {
+//     const cultivo = await getCultivoById(id);
+//     if (!cultivo) {
+//         throw new Error('Cultivo no encontrado');
+//     }
+//     cultivo.nombre = nombre;
+//     cultivo.tipoCultivo = tipo;
+//     cultivo.fechaSiembra = fechaSiembra;
+//     cultivo.fechaCosecha = fechaCosecha;
+//     return await AppDataSource.manager.save(cultivo);
+// }
 
-export const deleteCultivo = async (id: number) => {
-    const cultivo = await getCultivoById(id);
-    if (!cultivo) {
-        throw new Error('Cultivo no encontrado');
-    }
-    return await AppDataSource.manager.remove(cultivo);
-}
+// export const deleteCultivo = async (id: number) => {
+//     const cultivo = await getCultivoById(id);
+//     if (!cultivo) {
+//         throw new Error('Cultivo no encontrado');
+//     }
+//     return await AppDataSource.manager.remove(cultivo);
+// }
